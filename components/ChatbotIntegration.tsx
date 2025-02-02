@@ -60,7 +60,7 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
   })
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 w-full max-w-2xl mx-auto">
       <div className="grid gap-4">
         <Button onClick={handleTestChatbot} className="w-full bg-black text-white hover:bg-gray-800">
           TEST CHATBOT
@@ -81,8 +81,8 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
         </Button>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="p-6 bg-white/90 backdrop-blur-md">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card className="p-4 sm:p-6 bg-white/90 backdrop-blur-md">
           <CardContent className="p-0">
             <div className="aspect-square relative">
               <Canvas camera={{ position: [0, 0, 5] }}>
@@ -95,7 +95,7 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
           </CardContent>
         </Card>
 
-        <Card className="bg-white/90 backdrop-blur-md">
+        <Card className="p-4 sm:p-6 bg-white/90 backdrop-blur-md">
           <CardContent className="p-6">
             <div className="flex flex-col h-[400px]">
               <div className="flex-grow space-y-4 overflow-y-auto mb-4">
@@ -149,7 +149,7 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="p-6 bg-white/90 backdrop-blur-md rounded-lg text-center"
+            className="p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-lg text-center"
           >
             <animated.div style={confettiProps} className="absolute inset-0 pointer-events-none">
               {[...Array(50)].map((_, i) => (
@@ -173,8 +173,8 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             >
               <Check className="text-green-500" size={48} />
             </motion.div>
-            <h3 className="text-2xl font-bold text-black mb-4">Integration Successful!</h3>
-            <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-black mb-4">Integration Successful!</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Button className="w-full bg-black text-white hover:bg-gray-800">Explore Admin Panel</Button>
               <Button className="w-full bg-black text-white hover:bg-gray-800">Start talking to your chatbot</Button>
               <div className="flex gap-4">
@@ -196,7 +196,7 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="p-6 bg-red-50 rounded-lg text-center"
+            className="p-4 sm:p-6 bg-red-50 rounded-lg text-center"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -206,8 +206,8 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             >
               <X className="text-red-500" size={48} />
             </motion.div>
-            <h3 className="text-2xl font-bold text-black mb-4">Integration Not Detected</h3>
-            <p className="text-gray-700 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-black mb-4">Integration Not Detected</h3>
+            <p className="text-sm sm:text-base text-gray-700 mb-4">
               Please make sure you've correctly integrated the chatbot on your website and try again.
             </p>
             <Button onClick={handleTestIntegration} className="bg-black text-white hover:bg-gray-800">
@@ -221,7 +221,7 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="p-6 bg-gray-50 rounded-lg text-center"
+            className="p-4 sm:p-6 bg-gray-50 rounded-lg text-center"
           >
             <motion.div
               animate={{ rotate: 360 }}
@@ -230,8 +230,8 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
             >
               <Loader className="text-black" size={48} />
             </motion.div>
-            <h3 className="text-2xl font-bold text-black mb-4">Processing...</h3>
-            <p className="text-gray-700">Please wait while we complete the integration.</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-black mb-4">Processing...</h3>
+            <p className="text-sm sm:text-base text-gray-700">Please wait while we complete the integration.</p>
           </motion.div>
         )}
       </AnimatePresence>
