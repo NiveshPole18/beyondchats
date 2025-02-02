@@ -28,13 +28,13 @@ export default function Header({ onNavClick }: HeaderProps) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md h-14 flex items-center px-6 lg:px-12"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md h-14 flex items-center"
     >
-      <nav className="container mx-auto flex justify-between items-center">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center max-w-[1200px]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }} 
+          transition={{ delay: 0.2, duration: 0.8 }}
           className="text-2xl font-bold text-black"
         >
           BeyondChats
@@ -70,9 +70,9 @@ export default function Header({ onNavClick }: HeaderProps) {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-white/80 backdrop-blur-md px-6 lg:px-12"
+          className="md:hidden bg-white/80 backdrop-blur-md"
         >
-          <div className="container mx-auto py-4 flex flex-col space-y-4">
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -88,3 +88,4 @@ export default function Header({ onNavClick }: HeaderProps) {
     </motion.header>
   )
 }
+
