@@ -8,7 +8,7 @@ import type React from "react"
 import { Check, X, Loader, Code, Mail, Share2, Send } from "lucide-react"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import ChatbotModel from "./ChatbotModel"
+import MovingLogo from "./MovingLogo"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 
@@ -85,11 +85,11 @@ const ChatbotIntegration: React.FC<ChatbotIntegrationProps> = ({ onPrev }) => {
         <Card className="p-6 bg-white/90 backdrop-blur-md">
           <CardContent className="p-0">
             <div className="aspect-square relative">
-              <Canvas>
+              <Canvas camera={{ position: [0, 0, 5] }}>
                 <ambientLight intensity={0.5} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                <OrbitControls />
-                <ChatbotModel />
+                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
+                <MovingLogo />
+                <OrbitControls enableZoom={false} enablePan={false} />
               </Canvas>
             </div>
           </CardContent>
