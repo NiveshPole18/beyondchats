@@ -41,9 +41,9 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="space-y-6 bg-white/90 backdrop-blur-md p-6 rounded-lg shadow-lg"
+      className="space-y-4 bg-white/90 backdrop-blur-md p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-md mx-auto"
     >
-      <div className="text-2xl font-bold text-center mb-4">
+      <div className="text-xl sm:text-2xl font-bold text-center mb-4">
         <Typewriter
           options={{
             strings: ["Welcome to BeyondChats", "Create your account", "Start chatting in minutes"],
@@ -71,7 +71,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
                   type="text"
                   id="name"
                   {...register("name", { required: "Name is required" })}
-                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
+                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                   placeholder="Enter your name"
                 />
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
@@ -99,7 +99,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
                     required: "Email is required",
                     pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" },
                   })}
-                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
+                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                   placeholder="Enter your email"
                 />
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
@@ -127,7 +127,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
                     required: "Password is required",
                     minLength: { value: 8, message: "Password must be at least 8 characters" },
                   })}
-                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
+                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                   placeholder="Enter your password"
                 />
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
@@ -143,7 +143,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
                 </motion.p>
               )}
             </div>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               <motion.button
                 type="submit"
                 className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors duration-200"
@@ -185,7 +185,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onNext }) => {
                 type="text"
                 value={verificationCode}
                 onChange={(e) => setVerificationCode(e.target.value)}
-                className="pl-4 pr-10 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
+                className="pl-4 pr-10 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                 placeholder="Enter verification code"
               />
               <motion.div
