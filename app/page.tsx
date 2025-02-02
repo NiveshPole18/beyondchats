@@ -81,7 +81,7 @@ export default function Home() {
       <Header onNavClick={scrollToSection} />
       <div className="relative">
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <div className="min-h-screen flex flex-col justify-center items-center py-12 sm:py-16 md:py-20 w-full">
+          <div className="min-h-screen flex flex-col justify-center items-center py-8 sm:py-12 md:py-16 lg:py-20 w-full">
             <AnimatedSection id="hero">
               <div className="flex flex-col items-center justify-center text-center">
                 <RotatingLogo />
